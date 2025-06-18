@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const defaultBgColor = '#111111';
     // 读取本地存储
     let savedBgColor = localStorage.getItem('customBgColor') || defaultBgColor;
-    document.body.style.backgroundColor = savedBgColor;
+    document.body.style.setProperty('background-color', savedBgColor, 'important');
     if (bgColorPicker) {
         bgColorPicker.value = savedBgColor;
         bgColorPicker.addEventListener('input', function (e) {
             const color = e.target.value;
-            document.body.style.backgroundColor = color;
+            document.body.style.setProperty('background-color', color, 'important');
             localStorage.setItem('customBgColor', color);
         });
     }
