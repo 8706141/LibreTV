@@ -59,21 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 初始检查成人API选中状态
     setTimeout(checkAdultAPIsSelected, 100);
-
-    // 背景色选择器逻辑
-    const bgColorPicker = document.getElementById('bgColorPicker');
-    const defaultBgColor = '#111111';
-    // 读取本地存储
-    let savedBgColor = localStorage.getItem('customBgColor') || defaultBgColor;
-    document.body.style.setProperty('background-color', savedBgColor, 'important');
-    if (bgColorPicker) {
-        bgColorPicker.value = savedBgColor;
-        bgColorPicker.addEventListener('input', function (e) {
-            const color = e.target.value;
-            document.body.style.setProperty('background-color', color, 'important');
-            localStorage.setItem('customBgColor', color);
-        });
-    }
 });
 
 // 初始化API复选框
